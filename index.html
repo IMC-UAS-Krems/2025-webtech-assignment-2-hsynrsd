@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Hope supplies came randomly to my mind! -->
+    <title>Hope Supplies - Assignment 2</title>
+
+    <!-- using bootstrap cdn for styling -->
+     <!-- i obviously won't source every single bootstrap i've used, i commented on some. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Best font oat btw -->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <!-- my custom css file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <!-- bootstrap navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Hope Supplies</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <!-- cart button with badge -->
+                            <button class="btn btn-warning position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+                                Cart
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">
+                                    0
+                                </span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+
+    <section id="gallery-section">
+        <div class="p-5 mb-4 bg-light rounded-3 text-center">
+            <h1 class="display-5 fw-bold">Make a Donation</h1>
+            <p class="fs-4">Select items below to donate to those in need.</p>
+            <div class="alert alert-info" role="alert">
+                Info: If you donate 3 or more items, we cover the transaction fees! (Discount applied!)
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4" id="product-container">
+            
+            <div class="col">
+                <div class="card h-100">
+                    <img src="img/winter_coat.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Winter+Coat';" class="card-img-top" alt="Winter Coat">
+                    <div class="card-body">
+                        <h5 class="card-title">Winter Coat</h5>
+                        <p class="card-text">Keeps people warm.</p>
+                        <p class="fw-bold text-primary">$50.00</p>
+                        <button class="btn btn-success w-100 add-btn" onclick="addToCart('Winter Coat', 50)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="img/wool_blanket.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Wool+Blanket';" class="card-img-top" alt="Blanket">
+                    <div class="card-body">
+                        <h5 class="card-title">Wool Blanket</h5>
+                        <p class="card-text">Heavy duty blanket.</p>
+                        <p class="fw-bold text-primary">$25.00</p>
+                        <button class="btn btn-success w-100 add-btn" onclick="addToCart('Wool Blanket', 25)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="img/hygiene_kit.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Hygiene+Kit';" class="card-img-top" alt="Hygiene Kit">
+                    <div class="card-body">
+                        <h5 class="card-title">Hygiene Kit</h5>
+                        <p class="card-text">Soap, toothbrush, paste.</p>
+                        <p class="fw-bold text-primary">$15.00</p>
+                        <button class="btn btn-success w-100 add-btn" onclick="addToCart('Hygiene Kit', 15)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="img/backpack.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Backpack';" class="card-img-top" alt="Backpack">
+                    <div class="card-body">
+                        <h5 class="card-title">School Backpack</h5>
+                        <p class="card-text">For students.</p>
+                        <p class="fw-bold text-primary">$30.00</p>
+                        <button class="btn btn-success w-100 add-btn" onclick="addToCart('School Backpack', 30)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="img/first_aid_kit.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=First+Aid';" class="card-img-top" alt="First Aid">
+                    <div class="card-body">
+                        <h5 class="card-title">First Aid Kit</h5>
+                        <p class="card-text">Bandages and antiseptic.</p>
+                        <p class="fw-bold text-primary">$35.00</p>
+                        <button class="btn btn-success w-100 add-btn" onclick="addToCart('First Aid Kit', 35)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- I had nothing else in mind -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="img/canned_foods.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Food+Box';" class="card-img-top" alt="Food Box">
+                    <div class="card-body">
+                        <h5 class="card-title">Canned Food</h5>
+                        <p class="card-text">Non-perishable items.</p>
+                        <p class="fw-bold text-primary">$40.00</p>
+                        <button class="btn btn-success w-100 add-btn" onclick="addToCart('Canned Food', 40)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="img/formula.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Baby+Formula';" class="card-img-top" alt="Baby Formula">
+                    <div class="card-body">
+                        <h5 class="card-title">Baby Formula</h5>
+                        <p class="card-text">Nutrition for infants.</p>
+                        <p class="fw-bold text-primary">$20.00</p>
+                        <button class="btn btn-success w-100 add-btn" onclick="addToCart('Baby Formula', 20)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="img/water_filter.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Water+Filter';" class="card-img-top" alt="Water Filter">
+                    <div class="card-body">
+                        <h5 class="card-title">Water Filter</h5>
+                        <p class="card-text">Clean drinking water.</p>
+                        <p class="fw-bold text-primary">$45.00</p>
+                        <button class="btn btn-success w-100 add-btn" onclick="addToCart('Water Filter', 45)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="img/solar_lamp.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Solar+Lamp';" class="card-img-top" alt="Solar Lamp">
+                    <div class="card-body">
+                        <h5 class="card-title">Solar Lamp</h5>
+                        <p class="card-text">Light without electricity.</p>
+                        <p class="fw-bold text-primary">$18.00</p>
+                        <button class="btn btn-success w-100 add-btn" onclick="addToCart('Solar Lamp', 18)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <!-- I removed the background of this one image I found in the site "https://remove.bg" so it's png for that reason! -->
+                    <img src="img/tent.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Emergency+Tent';" class="card-img-top" alt="Tent">
+                    <div class="card-body">
+                        <h5 class="card-title">Emergency Tent</h5>
+                        <p class="card-text">Temporary shelter.</p>
+                        <p class="fw-bold text-primary">$80.00</p>
+                        <button class="btn btn-success w-100 add-btn" onclick="addToCart('Emergency Tent', 80)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+        <!-- checkout form section (hidden by default) -->
+        <section id="checkout-section" style="display: none;">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+
+                    <!-- back button -->
+                    <button class="btn btn-secondary mb-3" onclick="goBackToGallery()">← Back to Gallery</button>
+
+                    <h2 class="mb-4">Shipping Information</h2>
+
+                    <!-- form validation handled in scripts.js -->
+                    <form id="details-form" onsubmit="handleFormSubmit(event)">
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="emailAddr" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="emailAddr" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phoneNumber" class="form-label">Phone Number</label>
+                            
+                            <div class="input-group">
+                                <select class="form-select" id="countrySelect" style="max-width: 150px;" onchange="updateCountryCode()">
+                                    <option selected value="+1">USA (+1)</option>
+                                    <option value="+43 ">Austria (+43)</option>
+                                    <option value="+49 ">Germany (+49)</option>
+                                    <option value="+44 ">UK (+44)</option>
+                                </select>
+                                
+                                <input type="text" class="form-control" id="phoneNumber" placeholder="Select country first..." required>
+                            </div>
+
+                            <div class="text-danger" id="phone-error" style="display: none;">
+                                Invalid phone number (allow numbers, spaces, and +)
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="address" required>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="zipCode" class="form-label">ZIP Code (Max 6)</label>
+                                <input type="text" class="form-control" id="zipCode" required>
+                                <div class="text-danger" id="zip-error" style="display: none;">ZIP Code too long!</div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="city" class="form-label">City</label>
+                                <input type="text" class="form-control" id="city" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Complete Checkout</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- confirmation page after checkout -->
+        <section id="confirmation-section" style="display: none;">
+            <div class="text-center mt-5">
+
+                <!-- success alert -->
+                <div class="alert alert-success">
+                    <h4 class="alert-heading">Donation Successful!</h4>
+                    <p>Thank you for your support.</p>
+                </div>
+
+                <!-- receipt card -->
+                <div class="card mx-auto" style="max-width: 500px;">
+                    <div class="card-header">
+                        Receipt
+                    </div>
+                    <ul class="list-group list-group-flush" id="receipt-list"></ul>
+                    <div class="card-footer text-muted">
+                        <p>Subtotal: <span id="final-subtotal"></span></p>
+                        <p>Taxes (10%): <span id="final-tax"></span></p>
+                        <p>Discount: <span id="final-discount"></span></p>
+                        <h5>Total: <span id="final-total"></span></h5>
+                    </div>
+                </div>
+                
+                <!-- simple reload -->
+                <button class="btn btn-dark mt-4" onclick="location.reload()">Start Over</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <!-- basic footer -->
+        <p>&copy; 2025 Hope Supplies. All Rights Reserved.</p>
+    </footer>
+
+    <!-- bootstrap modal for cart -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Shopping Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <ul id="cart-list" class="list-group mb-3"></ul>
+                    <h5>Total: $<span id="modal-total">0.00</span></h5>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="proceedToCheckout()">Checkout</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- bootstrap js + my scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
