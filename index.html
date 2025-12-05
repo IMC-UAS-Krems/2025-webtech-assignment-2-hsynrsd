@@ -1,10 +1,13 @@
+<!-- https://getbootstrap.com/docs/5.3/components/collapse/ "data-bs" thingy I got it from here -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Hope supplies came randomly to my mind! -->
+    <!-- Hope supplies came randomly to my mind! thought about camping and other stuff -->
     <title>Hope Supplies - Assignment 2</title>
 
     <!-- using bootstrap cdn for styling -->
@@ -45,6 +48,7 @@
 
     <main class="container mt-4">
 
+    <!-- just a few pictures -->
     <section id="gallery-section">
         <div class="p-5 mb-4 bg-light rounded-3 text-center">
             <h1 class="display-5 fw-bold">Make a Donation</h1>
@@ -56,21 +60,29 @@
 
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4" id="product-container">
             
+            <!-- Prof said remove the onerror thingies so i removed em -->
+            <!-- Source: https://getbootstrap.com/docs/5.3/components/card/ -->
             <div class="col">
                 <div class="card h-100">
-                    <img src="img/winter_coat.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Winter+Coat';" class="card-img-top" alt="Winter Coat">
-                    <div class="card-body">
+                    <!-- Pictures are all taken from Pinterest, I do not claim ownership toi them! -->
+                    <img src="img/winter_coat.jpg" class="card-img-top" alt="Winter Coat">
+                    <!-- This is the padded section -->
+                    <div class="card-body"> 
+                        <!-- Title! -->
                         <h5 class="card-title">Winter Coat</h5>
+                        <!-- description of da product -->
                         <p class="card-text">Keeps people warm.</p>
+                        <!-- display the price -->
                         <p class="fw-bold text-primary">$50.00</p>
+                        <!-- Winter Coat is "name", 50 is the price -->
                         <button class="btn btn-success w-100 add-btn" onclick="addToCart('Winter Coat', 50)">Add to Cart</button>
                     </div>
                 </div>
             </div>
-
+            <!-- Just repeated the first card but different products and prices, i had copied it before adding comments to them-->
             <div class="col">
                 <div class="card h-100">
-                    <img src="img/wool_blanket.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Wool+Blanket';" class="card-img-top" alt="Blanket">
+                    <img src="img/wool_blanket.jpg" class="card-img-top" alt="Blanket">
                     <div class="card-body">
                         <h5 class="card-title">Wool Blanket</h5>
                         <p class="card-text">Heavy duty blanket.</p>
@@ -82,36 +94,36 @@
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="img/hygiene_kit.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Hygiene+Kit';" class="card-img-top" alt="Hygiene Kit">
+                    <img src="img/hygiene_kit.jpg" class="card-img-top" alt="Hygiene Kit">
                     <div class="card-body">
                         <h5 class="card-title">Hygiene Kit</h5>
                         <p class="card-text">Soap, toothbrush, paste.</p>
                         <p class="fw-bold text-primary">$15.00</p>
-                        <button class="btn btn-success w-100 add-btn" onclick="addToCart('Hygiene Kit', 15)">Add to Cart</button>
+                        <button class="btn btn-success w-100 add-btn"onclick="addToCart('Hygiene Kit', 15)">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="img/backpack.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Backpack';" class="card-img-top" alt="Backpack">
+                    <img src="img/backpack.jpg" class="card-img-top" alt="Backpack">
                     <div class="card-body">
                         <h5 class="card-title">School Backpack</h5>
                         <p class="card-text">For students.</p>
                         <p class="fw-bold text-primary">$30.00</p>
-                        <button class="btn btn-success w-100 add-btn" onclick="addToCart('School Backpack', 30)">Add to Cart</button>
+                        <button class="btn btn-success w-100 add-btn"  onclick="addToCart('School Backpack', 30)">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="img/first_aid_kit.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=First+Aid';" class="card-img-top" alt="First Aid">
+                    <img src="img/first_aid_kit.jpg" class="card-img-top" alt="First Aid">
                     <div class="card-body">
                         <h5 class="card-title">First Aid Kit</h5>
-                        <p class="card-text">Bandages and antiseptic.</p>
+                        <p class="card-text">Bandages and antiseptic. </p>
                         <p class="fw-bold text-primary">$35.00</p>
-                        <button class="btn btn-success w-100 add-btn" onclick="addToCart('First Aid Kit', 35)">Add to Cart</button>
+                        <button class="btn btn-success w-100 add-btn"onclick="addToCart('First Aid Kit', 35)">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -119,7 +131,7 @@
             <!-- I had nothing else in mind -->
             <div class="col">
                 <div class="card h-100">
-                    <img src="img/canned_foods.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Food+Box';" class="card-img-top" alt="Food Box">
+                    <img src="img/canned_foods.jpg" class="card-img-top" alt="Food  Box">
                     <div class="card-body">
                         <h5 class="card-title">Canned Food</h5>
                         <p class="card-text">Non-perishable items.</p>
@@ -131,8 +143,9 @@
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="img/formula.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Baby+Formula';" class="card-img-top" alt="Baby Formula">
+                    <img src="img/formula.jpg" class="card-img-top" alt="Baby Formula">
                     <div class="card-body">
+
                         <h5 class="card-title">Baby Formula</h5>
                         <p class="card-text">Nutrition for infants.</p>
                         <p class="fw-bold text-primary">$20.00</p>
@@ -143,19 +156,19 @@
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="img/water_filter.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Water+Filter';" class="card-img-top" alt="Water Filter">
+                    <img src="img/water_filter.jpg" class="card-img-top" alt="Water Filter">
                     <div class="card-body">
                         <h5 class="card-title">Water Filter</h5>
                         <p class="card-text">Clean drinking water.</p>
                         <p class="fw-bold text-primary">$45.00</p>
-                        <button class="btn btn-success w-100 add-btn" onclick="addToCart('Water Filter', 45)">Add to Cart</button>
+                        <button class="btn btn-success w-100 add-btn"onclick="addToCart('Water Filter', 45)"> Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="img/solar_lamp.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Solar+Lamp';" class="card-img-top" alt="Solar Lamp">
+                    <img src="img/solar_lamp.jpg" class="card-img-top" alt="Solar Lamp">
                     <div class="card-body">
                         <h5 class="card-title">Solar Lamp</h5>
                         <p class="card-text">Light without electricity.</p>
@@ -168,7 +181,7 @@
             <div class="col">
                 <div class="card h-100">
                     <!-- I removed the background of this one image I found in the site "https://remove.bg" so it's png for that reason! -->
-                    <img src="img/tent.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=Emergency+Tent';" class="card-img-top" alt="Tent">
+                    <img src="img/tent.png" class="card-img-top" alt="Tent">
                     <div class="card-body">
                         <h5 class="card-title">Emergency Tent</h5>
                         <p class="card-text">Temporary shelter.</p>
@@ -182,6 +195,7 @@
     </section>
 
         <!-- checkout form section (hidden by default) -->
+        <!-- Source: https://getbootstrap.com/docs/5.3/forms/overview/ -->
         <section id="checkout-section" style="display: none;">
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -208,15 +222,17 @@
                             
                             <div class="input-group">
                                 <select class="form-select" id="countrySelect" style="max-width: 150px;" onchange="updateCountryCode()">
-                                    <option selected value="+1">USA (+1)</option>
-                                    <option value="+43 ">Austria (+43)</option>
+                                    <!-- It was just digits, didn't like that, added spacing between numbers and allows us to choose country codes -->
+                                     <!-- selected value was usa at first, i changed it to austria later -->
+                                    <option selected value="+43 ">Austria (+43)</option>
+                                    <option value="+1">USA (+1)</option> 
                                     <option value="+49 ">Germany (+49)</option>
                                     <option value="+44 ">UK (+44)</option>
                                 </select>
                                 
                                 <input type="text" class="form-control" id="phoneNumber" placeholder="Select country first..." required>
                             </div>
-
+                            <!-- Errors are handled in scripts.js -->
                             <div class="text-danger" id="phone-error" style="display: none;">
                                 Invalid phone number (allow numbers, spaces, and +)
                             </div>
@@ -231,6 +247,7 @@
                             <div class="col-md-6 mb-3">
                                 <label for="zipCode" class="form-label">ZIP Code (Max 6)</label>
                                 <input type="text" class="form-control" id="zipCode" required>
+                                <!-- Can't be longer than 6 numbers -->
                                 <div class="text-danger" id="zip-error" style="display: none;">ZIP Code too long!</div>
                             </div>
 
@@ -246,7 +263,7 @@
             </div>
         </section>
 
-        <!-- confirmation page after checkout -->
+        <!-- confirmation page after checkout, otherwise dispaly: none -->
         <section id="confirmation-section" style="display: none;">
             <div class="text-center mt-5">
 
@@ -263,6 +280,7 @@
                     </div>
                     <ul class="list-group list-group-flush" id="receipt-list"></ul>
                     <div class="card-footer text-muted">
+                        <!-- Show the amount spent and other stuff -->
                         <p>Subtotal: <span id="final-subtotal"></span></p>
                         <p>Taxes (10%): <span id="final-tax"></span></p>
                         <p>Discount: <span id="final-discount"></span></p>
@@ -270,7 +288,7 @@
                     </div>
                 </div>
                 
-                <!-- simple reload -->
+                <!-- simple reload when clicking the button, i was planinng on removing it but kept it-->
                 <button class="btn btn-dark mt-4" onclick="location.reload()">Start Over</button>
             </div>
         </section>
@@ -278,11 +296,12 @@
     </main>
 
     <footer class="bg-dark text-white text-center py-3 mt-5">
-        <!-- basic footer -->
+        <!-- basic footer with clarification that I do not own the pictures-->
         <p>&copy; 2025 Hope Supplies. All Rights Reserved.</p>
+        <p class="small text-secondary">All images are taken from Pinterest, I do not claim ownership to them!</p>
     </footer>
 
-    <!-- bootstrap modal for cart -->
+    <!-- bootstrap modal for cart, tabindex makes elements focusable, in this case we remove elements from the tab sequence cause it's a negative number-->
     <div class="modal fade" id="cartModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -307,7 +326,7 @@
     </div>
 
     <!-- bootstrap js + my scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
 </body>
 </html>

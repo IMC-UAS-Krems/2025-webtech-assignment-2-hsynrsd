@@ -6,7 +6,7 @@ body {
     flex-direction: column;
 }
 
-/* 2. Card Image Fix (IMPORTANT) */
+/* 2. Card Image Fix !!! */
 /* Without this, if images are different sizes, the grid looks messy!!!!!!!!!!! Took me some time*/
 .card-img-top {
     height: 300px;         /* Force all images to be 300px tall. It was 200px beforehand but some of the pictures didn't fit so yes. */ 
