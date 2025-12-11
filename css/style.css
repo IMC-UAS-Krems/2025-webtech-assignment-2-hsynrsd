@@ -16,7 +16,6 @@ body {
 }
 
 /* 3. Card Hover Effect */
-/* Just a small animation to show we know CSS transitions */
 .card {
     transition: transform 0.2s; 
     border: none;
@@ -29,7 +28,6 @@ body {
 }
 
 /* 4. Checkout Section Styling */
-/* Makes the form look like a piece of paper on the screen */
 #checkout-section {
     background-color: white;
     padding: 40px;
